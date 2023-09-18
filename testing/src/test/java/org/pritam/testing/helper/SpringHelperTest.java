@@ -1,6 +1,7 @@
 package org.pritam.testing.helper;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -9,28 +10,33 @@ public class SpringHelperTest {
 	StringHelper stringHelper = new StringHelper();
 	
 	@Test
-	public void testTruncateAInFirst2Positions1() {
-		assertEquals("",stringHelper.truncateAInFirst2Positions("A"));
+	public void testAreFirstAndLastTwoCharactersTheSame1() {
+		assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("A"));
 	}
 	
 	@Test
-	public void testTruncateAInFirst2Positions2() {
-		assertEquals("",stringHelper.truncateAInFirst2Positions("AA"));
+	public void testAreFirstAndLastTwoCharactersTheSame2() {
+		assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame("AA"));
 	}
 	
 	@Test
-	public void testTruncateAInFirst2Positions3() {
-		assertEquals("CD",stringHelper.truncateAInFirst2Positions("AACD"));
+	public void testAreFirstAndLastTwoCharactersTheSame3() {
+		assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("AACD"));
 	}
 	
 	@Test
-	public void testTruncateAInFirst2Positions4() {
-		assertEquals("CDAA",stringHelper.truncateAInFirst2Positions("CDAA"));
+	public void testAreFirstAndLastTwoCharactersTheSame4() {
+		assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame("AACDAA"));
 	}
 	
 	@Test
-	public void testTruncateAInFirst2Positions5() {
-		assertEquals("ACD",stringHelper.truncateAInFirst2Positions("AACD"));
+	public void testAreFirstAndLastTwoCharactersTheSame5() {
+		assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("ACDA"));
+	}
+	
+	@Test
+	public void testAreFirstAndLastTwoCharactersTheSame6() {
+		assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame(""));
 	}
 
 }
