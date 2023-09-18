@@ -3,22 +3,22 @@ package org.pritam.testing.helper;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SpringHelperTest {
 
 	StringHelper stringHelper = new StringHelper();
 	
-	@Before
-	public void atStartOfEveryTestCase() {
-		System.out.println("Starting of test case.");
+	@BeforeClass
+	public static void atStartOfTesting() {
+		System.out.println("Starting of testing.");
 	}
 	
-	@After
-	public void atEndOfEveryTestCase() {
-		System.out.println("Ending of test case.");
+	@AfterClass
+	public static void atEndOfTesting() {
+		System.out.println("Ending of testing.");
 	}
 	
 	@Test
