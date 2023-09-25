@@ -5,16 +5,21 @@ import static org.mockito.BDDMockito.given;
 
 import java.util.Arrays;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.MockitoRule;
 import org.pritam.testing.business.TodoBusinessImpl;
 import org.pritam.testing.data.api.TodoService;
 
-@RunWith(MockitoJUnitRunner.class)
 public class TodoBusinessImplTestingWithMockitoAnnotation {
+	
+	@Rule
+	public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	@Mock
 	private TodoService todoService;

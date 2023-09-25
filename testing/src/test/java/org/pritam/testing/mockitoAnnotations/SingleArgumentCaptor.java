@@ -8,15 +8,19 @@ import static org.mockito.Mockito.mock;
 
 import java.util.Arrays;
 
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.pritam.testing.business.TodoBusinessImpl;
 import org.pritam.testing.data.api.TodoService;
-@RunWith(MockitoJUnitRunner.class)
+
 public class SingleArgumentCaptor {
+	
+	@Rule
+	public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	@Captor
 	ArgumentCaptor<String> agc;
